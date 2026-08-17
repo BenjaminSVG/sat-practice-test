@@ -1,0 +1,103 @@
+/* ==========================================================================
+   dark.css — Modo oscuro. Se activa con la clase .dark en <html>.
+   Estrategia: (1) voltear las variables de las pantallas propias (Bluebook,
+   login, resultados, modales) y (2) sobrescribir las utilidades de color de
+   Tailwind del portal con `.dark .<clase>` (gana por especificidad).
+   ========================================================================== */
+
+/* 1) Variables de los componentes propios --------------------------------- */
+.dark {
+  --bb-text: #e6edf6;
+  --bb-muted: #9aa7b8;
+  --bb-border: #33415a;
+  --bb-bg: #1a2230;         /* superficies / tarjetas */
+  --bb-bg-soft: #10161f;    /* fondo de página */
+  --bb-blue: #24405f;
+  --bb-blue-dark: #adc7f7;  /* títulos que usaban azul oscuro → azul claro */
+  --bb-accent: #4d94ff;
+  --bb-accent-soft: #1c2c46;
+  --shadow: 0 6px 24px rgba(0, 0, 0, .5);
+  color-scheme: dark;
+}
+.dark body { background: var(--bb-bg-soft); color: var(--bb-text); }
+
+/* 2) Utilidades de color de Tailwind (portal) ----------------------------- */
+.dark .bg-background { background-color: #10161f; }
+.dark .bg-surface,
+.dark .bg-surface-container-lowest { background-color: #1a2230; }
+.dark .bg-surface-container-low { background-color: #151c28; }
+.dark .bg-surface-container { background-color: #1e2735; }
+.dark .bg-surface-container-high,
+.dark .bg-surface-container-highest,
+.dark .bg-surface-variant { background-color: #24303f; }
+.dark .bg-white { background-color: #1a2230; }
+.dark .bg-primary { background-color: #2d4b73; }
+.dark .bg-primary-container { background-color: #15253c; }
+.dark .bg-secondary-container { background-color: #24303f; }
+
+.dark .text-on-surface,
+.dark .text-on-background { color: #e6edf6; }
+.dark .text-on-surface-variant { color: #9aa7b8; }
+.dark .text-primary { color: #adc7f7; }
+.dark .text-secondary { color: #b9c4cf; }
+
+.dark .border-outline-variant { border-color: #33415a; }
+.dark .border-outline { border-color: #46536b; }
+.dark .border-primary { border-color: #4d6b93; }
+.dark .divide-outline-variant > * { border-color: #33415a; }
+
+.dark .hover\:bg-surface-container:hover { background-color: #1e2735; }
+.dark .hover\:bg-surface-container-high:hover { background-color: #24303f; }
+.dark .hover\:bg-primary-container:hover { background-color: #1b2f4c; }
+.dark .hover\:bg-secondary-container:hover { background-color: #24303f; }
+
+/* Píldoras verdes / errores legibles en oscuro */
+.dark .bg-green-50 { background-color: #14301f; }
+.dark .text-green-700 { color: #6ee7a0; }
+.dark .text-green-600 { color: #5fd08a; }
+.dark .border-green-200 { border-color: #1f5133; }
+.dark .text-error { color: #ff8a80; }
+
+/* 3) Componentes propios con clases específicas --------------------------- */
+.dark .nav-link { color: #9aa7b8; }
+.dark .nav-link:hover,
+.dark .nav-link.active { color: #adc7f7; }
+.dark .nav-link.active { border-bottom-color: #adc7f7; }
+.dark .nav-link-m { background: #1e2735; color: #cdd6e2; }
+.dark .nav-link-m.active { background: #2d4b73; color: #fff; }
+
+.dark .dropzone { background: #151c28; }
+.dark .opt-row select,
+.dark .opt-row input,
+.dark #admin-create input,
+.dark .pm-field input,
+.dark .login-field input,
+.dark .bb-spr-row input,
+.dark #spr-input { background: #1a2230; color: var(--bb-text); border-color: #33415a; }
+
+.dark .mode-tabs { background: #10161f; }
+.dark .mode-tab.active { background: #24303f; color: #adc7f7; }
+.dark .choice { background: #1a2230; }
+.dark .choice.selected { background: var(--bb-accent-soft); }
+.dark .letter-btn { background: #1a2230; color: var(--bb-text); }
+
+/* Login (textos con color propio) */
+.dark .login-brand { color: #adc7f7; }
+.dark .login-field { color: #9aa7b8; }
+.dark .login-sub, .dark .login-note { color: #9aa7b8; }
+.dark .login-card { border: 1px solid #33415a; }
+
+/* Tinte de aviso legible en oscuro */
+.dark .gc-pill.med,
+.dark .import-status.working,
+.dark .result-tag.blank { background: #3a2f10; color: #f0d488; }
+
+/* Botón de tema en la navbar / login */
+.theme-toggle {
+  background: none; border: none; cursor: pointer; padding: 8px; border-radius: 999px;
+  color: var(--bb-muted); display: inline-flex; align-items: center;
+}
+.theme-toggle:hover { color: var(--bb-accent); }
+.login-theme {
+  position: absolute; top: 16px; right: 16px; color: #fff; opacity: .85;
+}

@@ -1,0 +1,11 @@
+*.pdf
+.claude/
+.env
+local.db
+local.db-*
+*.db
+*.db-journal
+node_modules
+panel_de_control_sat_prep/
+importar_ex_menes_sat_prep/
+stitch_sat_practice_portal/

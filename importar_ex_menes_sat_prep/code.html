@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Import Exams | Academic Excellence System</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "primary-container": "#1a365d",
+                    "outline-variant": "#c4c6cf",
+                    "surface-container-high": "#dce9ff",
+                    "tertiary-container": "#4f2e00",
+                    "tertiary-fixed": "#ffddba",
+                    "on-tertiary-fixed-variant": "#633f0f",
+                    "on-surface-variant": "#43474e",
+                    "on-primary-container": "#86a0cd",
+                    "on-secondary-container": "#58646a",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#001b3c",
+                    "background": "#f8f9ff",
+                    "on-tertiary-fixed": "#2b1700",
+                    "surface-container-highest": "#d4e4fc",
+                    "secondary-fixed-dim": "#bcc8cf",
+                    "primary-fixed": "#d6e3ff",
+                    "tertiary": "#321b00",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#455f88",
+                    "surface-variant": "#d4e4fc",
+                    "secondary-fixed": "#d8e4eb",
+                    "secondary": "#546066",
+                    "inverse-surface": "#223144",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#3c494e",
+                    "on-background": "#0d1c2e",
+                    "surface-container": "#e5eeff",
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#adc7f7",
+                    "tertiary-fixed-dim": "#f2bc82",
+                    "surface-container-low": "#eff4ff",
+                    "error": "#ba1a1a",
+                    "on-surface": "#0d1c2e",
+                    "outline": "#74777f",
+                    "on-tertiary-container": "#c6955e",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "secondary-container": "#d5e2e9",
+                    "primary": "#002045",
+                    "surface-dim": "#ccdbf4",
+                    "error-container": "#ffdad6",
+                    "surface": "#f8f9ff",
+                    "inverse-primary": "#adc7f7",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary-fixed": "#111d22"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "stack-sm": "8px",
+                    "gutter": "24px",
+                    "stack-lg": "32px",
+                    "unit": "8px",
+                    "stack-md": "16px",
+                    "margin-desktop": "48px",
+                    "container-max": "1120px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f8f9ff;
+        }
+        .drag-active {
+            border-color: #1a365d !important;
+            background-color: #eff4ff !important;
+        }
+        @keyframes progress-pulse {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .progress-shimmer {
+            animation: progress-pulse 2s infinite linear;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background min-h-screen">
+<!-- TopNavBar Component -->
+<header class="w-full top-0 sticky bg-surface-container-lowest shadow-sm border-b border-outline-variant z-50">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-16">
+<div class="font-headline-md text-headline-md font-bold text-primary">Academic Excellence System</div>
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:opacity-70" href="#">Dashboard</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:opacity-70" href="#">My Exams</a>
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1 transition-colors cursor-pointer active:opacity-70" href="#">Import</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:opacity-70" href="#">Results</a>
+</nav>
+<div class="flex items-center gap-stack-md">
+<button class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface-variant rounded-full transition-all">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant p-2 hover:bg-surface-variant rounded-full transition-all">settings</button>
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a student in a minimalist academic setting with soft natural lighting and a high-key background to match the clean UI aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWswYn7o6GC-0dhWAxf6aR1uZ4Tf6D8Nf6_eTaVmCUeaVQ2K27LjvP7AxwuoRPWW1HnXwAWkw-mTffafhEQD80i2FwRYjzN7h5i8Qh9M3VGiXNyV100fhLTD5CRmMnLPLaawXfk6AoHhA2EkhixEVl0DTUdwDbdcnW_wXwVsU6CxNgI5mxuXWaVLq8bqSoHNJJhZUcwmyP7hsXXDTcCuM_Bby4VJx7St4zj98CvF8HIQcLO6DTD_4"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-lg">
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Header Section -->
+<div class="col-span-12 mb-stack-md">
+<h1 class="font-headline-lg text-headline-lg text-primary">Import Documents</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-stack-sm">Convert your study materials into interactive SAT practice exams.</p>
+</div>
+<!-- Main Upload Surface -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-stack-lg">
+<!-- Drag and Drop Area -->
+<section class="bg-surface-container-lowest border-2 border-dashed border-outline-variant rounded-xl p-12 flex flex-col items-center justify-center text-center transition-all duration-300" id="drop-zone">
+<div class="w-16 h-16 bg-surface-container-high rounded-full flex items-center justify-center mb-stack-md text-primary">
+<span class="material-symbols-outlined text-4xl">cloud_upload</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-stack-sm">Drag and drop files here</h3>
+<p class="font-body-md text-on-surface-variant mb-stack-lg">Upload official SAT practice tests or custom question sets (PDF, DOCX up to 25MB).</p>
+<button class="bg-primary-container text-on-primary-container px-6 py-3 rounded-lg font-label-md hover:opacity-90 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">attach_file</span>
+                        Select from Device
+                    </button>
+</section>
+<!-- Processing State Mockup -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-md shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-stack-md">
+<div class="w-10 h-10 bg-surface-variant flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Official_SAT_Practice_Test_2024.pdf</p>
+<p class="text-xs text-on-surface-variant">4.2 MB • Extracting questions...</p>
+</div>
+</div>
+<span class="font-label-md text-primary">68%</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded-full overflow-hidden relative">
+<div class="absolute top-0 left-0 h-full bg-primary rounded-full transition-all duration-500" style="width: 68%;">
+<div class="w-full h-full progress-shimmer bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Recently Imported Table -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden">
+<div class="px-stack-md py-4 border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+<h2 class="font-label-md text-primary">Recently Imported</h2>
+<button class="text-primary font-label-md hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr>
+<th class="px-6 py-3 font-label-md text-on-surface-variant text-xs uppercase tracking-wider">File Name</th>
+<th class="px-6 py-3 font-label-md text-on-surface-variant text-xs uppercase tracking-wider">Upload Date</th>
+<th class="px-6 py-3 font-label-md text-on-surface-variant text-xs uppercase tracking-wider">Status</th>
+<th class="px-6 py-3 font-label-md text-on-surface-variant text-xs uppercase tracking-wider text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-lg">article</span>
+<span class="font-body-md">March_SAT_Practice.docx</span>
+</div>
+</td>
+<td class="px-6 py-4 text-on-surface-variant text-sm">Oct 24, 2023</td>
+<td class="px-6 py-4">
+<span class="bg-success-container text-success px-2 py-1 rounded-full text-xs font-bold border border-green-200 bg-green-50 text-green-700">Ready</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary bg-primary-fixed px-4 py-1 rounded font-label-md hover:bg-primary-container hover:text-on-primary-container transition-all">Start Test</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-lg">article</span>
+<span class="font-body-md">Math_Grid_In_Drills.pdf</span>
+</div>
+</td>
+<td class="px-6 py-4 text-on-surface-variant text-sm">Oct 23, 2023</td>
+<td class="px-6 py-4">
+<span class="bg-surface-variant text-on-surface-variant px-2 py-1 rounded-full text-xs font-bold animate-pulse">Processing</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-outline border border-outline px-4 py-1 rounded font-label-md cursor-not-allowed" disabled="">Waiting</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-lg">article</span>
+<span class="font-body-md">Evidence_Based_Reading.pdf</span>
+</div>
+</td>
+<td class="px-6 py-4 text-on-surface-variant text-sm">Oct 21, 2023</td>
+<td class="px-6 py-4">
+<span class="bg-green-50 text-green-700 px-2 py-1 rounded-full text-xs font-bold border border-green-200">Ready</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary bg-primary-fixed px-4 py-1 rounded font-label-md hover:bg-primary-container hover:text-on-primary-container transition-all">Start Test</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- Sidebar Instructions -->
+<aside class="col-span-12 lg:col-span-4 flex flex-col gap-stack-lg">
+<div class="bg-primary text-on-primary rounded-xl p-stack-md shadow-lg">
+<h3 class="font-headline-md text-headline-md mb-stack-md">How it Works</h3>
+<ul class="space-y-stack-md">
+<li class="flex gap-4">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center shrink-0 font-bold">1</div>
+<p class="font-body-md text-primary-fixed">Our AI scans your document for specific question formats used in SAT exams.</p>
+</li>
+<li class="flex gap-4">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center shrink-0 font-bold">2</div>
+<p class="font-body-md text-primary-fixed">Text and images are extracted, including complex math equations and reading passages.</p>
+</li>
+<li class="flex gap-4">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center shrink-0 font-bold">3</div>
+<p class="font-body-md text-primary-fixed">Multiple-choice options are identified and tagged to create an interactive test surface.</p>
+</li>
+<li class="flex gap-4">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center shrink-0 font-bold">4</div>
+<p class="font-body-md text-primary-fixed">The exam is added to your library, ready for a timed practice session.</p>
+</li>
+</ul>
+</div>
+<div class="bg-surface-container-high rounded-xl p-stack-md border border-outline-variant">
+<h4 class="font-label-md text-primary mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">tips_and_updates</span>
+                        Pro Tip
+                    </h4>
+<p class="text-on-surface-variant font-body-md text-sm">For the best results, ensure your PDF documents have clear text that isn't hand-written. Scanned documents work best if the resolution is at least 300 DPI.</p>
+</div>
+<div class="h-64 rounded-xl overflow-hidden relative shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist high-key photo of a modern library workspace with a single laptop open showing a clean exam interface, a soft-blue notebook, and a sleek pen. The lighting is bright and airy, symbolizing academic clarity and professional focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-bC4kpxMhNXeoqZD7kIy2FZnnPx6AhHnPYh6yNI7eAk1J9evGUCl6QyNgBDi9ihhOVaqXvZVxjfv5IceFPax9BBRg95dVjzZ2AIMnXhweKqAJ6nG3xaACRHhycOuPCWneNjrTvGP7MdzS2MrY8J1KyqY55Y1DomWoB0psO8UwPnmQkKoJ_ybsk4QBRUwAdASswTvV0ujFUfZSSdPtgMJvzeNLg2kkWkqz8bpu75kXXUPyCHheoQo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-stack-md">
+<p class="text-white text-xs font-label-md">Join 10,000+ students practicing with AI-enhanced materials.</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer Space -->
+<footer class="max-w-container-max mx-auto px-margin-desktop py-stack-lg border-t border-outline-variant mt-stack-lg text-on-surface-variant">
+<div class="flex justify-between items-center">
+<p class="text-xs font-label-md">© 2024 Academic Excellence System. All rights reserved.</p>
+<div class="flex gap-stack-md text-xs font-label-md">
+<a class="hover:text-primary" href="#">Support</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple drag and drop interaction simulation
+        const dropZone = document.getElementById('drop-zone');
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                dropZone.classList.add('drag-active');
+            }, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('drag-active');
+            }, false);
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            alert(`Detected ${files.length} file(s). Upload processing initiated.`);
+        });
+    </script>
+</body></html>

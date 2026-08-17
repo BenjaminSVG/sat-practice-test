@@ -1,0 +1,20 @@
+{
+  "name": "sat-practice-test",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SAT Practice Test — examen de práctica estilo Bluebook con dashboard de progreso y base de datos local.",
+  "scripts": {
+    "start": "node scripts/start-local.mjs",
+    "init-db": "node scripts/init-db.mjs",
+    "build:css": "tailwindcss -c tailwind.config.cjs -i css/tailwind-input.css -o css/tailwind.css --minify",
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.14.0"
+  },
+  "devDependencies": {
+    "pdfjs-dist": "^3.11.174",
+    "tailwindcss": "^3.4.17"
+  }
+}

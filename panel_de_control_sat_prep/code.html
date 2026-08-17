@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Academic Excellence System - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "primary-container": "#1a365d",
+                    "outline-variant": "#c4c6cf",
+                    "surface-container-high": "#dce9ff",
+                    "tertiary-container": "#4f2e00",
+                    "tertiary-fixed": "#ffddba",
+                    "on-tertiary-fixed-variant": "#633f0f",
+                    "on-surface-variant": "#43474e",
+                    "on-primary-container": "#86a0cd",
+                    "on-secondary-container": "#58646a",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed": "#001b3c",
+                    "background": "#f8f9ff",
+                    "on-tertiary-fixed": "#2b1700",
+                    "surface-container-highest": "#d4e4fc",
+                    "secondary-fixed-dim": "#bcc8cf",
+                    "primary-fixed": "#d6e3ff",
+                    "tertiary": "#321b00",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#455f88",
+                    "surface-variant": "#d4e4fc",
+                    "secondary-fixed": "#d8e4eb",
+                    "secondary": "#546066",
+                    "inverse-surface": "#223144",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#3c494e",
+                    "on-background": "#0d1c2e",
+                    "surface-container": "#e5eeff",
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#adc7f7",
+                    "tertiary-fixed-dim": "#f2bc82",
+                    "surface-container-low": "#eff4ff",
+                    "error": "#ba1a1a",
+                    "on-surface": "#0d1c2e",
+                    "outline": "#74777f",
+                    "on-tertiary-container": "#c6955e",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "secondary-container": "#d5e2e9",
+                    "primary": "#002045",
+                    "surface": "#f8f9ff",
+                    "inverse-primary": "#adc7f7",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary-fixed": "#111d22"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "stack-sm": "8px",
+                    "gutter": "24px",
+                    "stack-lg": "32px",
+                    "unit": "8px",
+                    "stack-md": "16px",
+                    "margin-desktop": "48px",
+                    "container-max": "1120px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); border: 1px solid rgba(226, 232, 240, 0.8); }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky bg-surface-container-lowest dark:bg-surface-container-low border-b border-outline-variant dark:border-outline shadow-sm z-50">
+<nav class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop h-16">
+<div class="flex items-center gap-8">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Academic Excellence System</span>
+<div class="hidden md:flex gap-6 items-center h-full">
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 hover:text-primary transition-colors cursor-pointer active:opacity-70" href="#">Dashboard</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:opacity-70" href="#">My Exams</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:opacity-70" href="#">Import</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:opacity-70" href="#">Results</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline">
+<img class="w-full h-full object-cover" data-alt="A professional student profile portrait, bright clean lighting, academic setting, high resolution, minimalist aesthetic matching a corporate-modern design system with navy and soft blue tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB8-YI9VILqI21pDDg-l6Gy3I2djnkxRtJhdivSEJTPxCwsSZz-x3Vxl7NBNrFinRIgIp4ylpxeltVjhDh-cFWP9ik85cMx-zaGhjlqZDmRTF7Ij_vpG5EpnEUz-iK980Y-7kTaCCFNKpyrw4D3czNnVP7ZmvLm1WDKLPOLjFaLbBYLn8X7A0kL0tOdrnvNEFCclNPicvwlT15Bn84W5xz9qffSJ60SuEXVbHXNEjgkmoh_CZ9t4k"/>
+</div>
+</div>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-lg space-y-stack-lg">
+<!-- Hero Section -->
+<section class="relative overflow-hidden rounded-xl bg-primary-container p-10 text-white shadow-lg">
+<div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="space-y-2 max-w-2xl">
+<h1 class="font-display-lg text-display-lg tracking-tight">Welcome back, Alex!</h1>
+<p class="font-body-lg text-body-lg opacity-90">Ready for today's practice? Your path to a 1600 continues with a focused Math session scheduled for 3:00 PM.</p>
+</div>
+<div class="flex-shrink-0">
+<button class="bg-surface-container-lowest text-primary px-8 py-3 rounded-lg font-label-md text-label-md shadow-md hover:bg-secondary-container transition-all active:scale-95">
+                        Start Today's Goal
+                    </button>
+</div>
+</div>
+<!-- Subtle background effect -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+</section>
+<!-- Stats Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Average Score</p>
+<p class="font-headline-md text-headline-md text-primary">1480 <span class="text-label-sm font-normal text-on-tertiary-container">+20 pts</span></p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Tests Completed</p>
+<p class="font-headline-md text-headline-md text-primary">12 <span class="text-label-sm font-normal text-on-surface-variant">of 20</span></p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Study Hours</p>
+<p class="font-headline-md text-headline-md text-primary">42.5h <span class="text-label-sm font-normal text-on-surface-variant">this month</span></p>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter items-start">
+<!-- Recent Exams -->
+<section class="lg:col-span-2 space-y-stack-md">
+<div class="flex justify-between items-center px-2">
+<h2 class="font-headline-md text-headline-md text-on-background">Recent Exams</h2>
+<button class="font-label-md text-label-md text-primary hover:underline transition-all">View All Results</button>
+</div>
+<div class="space-y-stack-sm">
+<!-- Exam Card 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4 transition-transform hover:shadow-md">
+<div class="flex items-center gap-4">
+<div class="p-3 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Official SAT Practice Test #8</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Completed Oct 24, 2023</p>
+</div>
+</div>
+<div class="flex items-center gap-8 px-2">
+<div class="text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Score</p>
+<p class="font-label-md text-label-md text-primary">1520</p>
+</div>
+<button class="bg-primary text-white px-5 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all active:scale-95">Review</button>
+</div>
+</div>
+<!-- Exam Card 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4 transition-transform hover:shadow-md">
+<div class="flex items-center gap-4">
+<div class="p-3 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">College Board Diagnostic #2</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Completed Oct 18, 2023</p>
+</div>
+</div>
+<div class="flex items-center gap-8 px-2">
+<div class="text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Score</p>
+<p class="font-label-md text-label-md text-primary">1440</p>
+</div>
+<button class="bg-primary text-white px-5 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all active:scale-95">Review</button>
+</div>
+</div>
+<!-- Exam Card 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4 transition-transform hover:shadow-md">
+<div class="flex items-center gap-4">
+<div class="p-3 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Writing Section Drill - Advanced</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Completed Oct 15, 2023</p>
+</div>
+</div>
+<div class="flex items-center gap-8 px-2">
+<div class="text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Score</p>
+<p class="font-label-md text-label-md text-primary">780</p>
+</div>
+<button class="bg-primary text-white px-5 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all active:scale-95">Review</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Upcoming Practice Section -->
+<aside class="space-y-stack-md">
+<h2 class="font-headline-md text-headline-md text-on-background px-2">Next Milestone</h2>
+<div class="bg-white rounded-xl border-2 border-primary overflow-hidden shadow-md">
+<div class="bg-primary p-4 text-white">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">event</span>
+<p class="font-label-sm text-label-sm uppercase tracking-widest opacity-80">Scheduled: Oct 30</p>
+</div>
+</div>
+<div class="p-6 space-y-stack-md">
+<div class="space-y-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Full Length Practice Test #1</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Simulate test day conditions with our most accurate practice environment.</p>
+</div>
+<div class="flex items-center gap-4 p-3 bg-surface-container-low rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-primary">timer</span>
+<p class="font-label-md text-label-md text-on-surface">3h 15m Duration</p>
+</div>
+<button class="w-full bg-primary text-white py-3 rounded-lg font-headline-md text-headline-md shadow hover:bg-primary-container transition-all active:scale-[0.98]">
+                            Start New Test
+                        </button>
+</div>
+</div>
+<!-- Bento-style micro cards for study focuses -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant hover:bg-surface-container-high transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-on-tertiary-container group-hover:scale-110 transition-transform">calculate</span>
+<p class="mt-2 font-label-sm text-label-sm text-on-surface-variant">Math (Calc)</p>
+<p class="font-label-md text-label-md text-on-surface">Drills</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant hover:bg-surface-container-high transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">menu_book</span>
+<p class="mt-2 font-label-sm text-label-sm text-on-surface-variant">Reading</p>
+<p class="font-label-md text-label-md text-on-surface">Analysis</p>
+</div>
+</div>
+</aside>
+</div>
+<!-- Performance Chart Mockup Section -->
+<section class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant shadow-sm space-y-stack-md">
+<div class="flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md text-on-background">Score Progression</h2>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container rounded-full text-label-sm font-label-sm text-primary">Last 6 Months</span>
+</div>
+</div>
+<div class="h-64 w-full relative flex items-end justify-between gap-2 px-4 border-b border-l border-outline-variant mt-8">
+<!-- Simple SVG chart for better visual quality without heavy libs -->
+<svg class="absolute inset-0 w-full h-full p-4" preserveaspectratio="none" viewbox="0 0 800 200">
+<path d="M0,180 Q100,160 200,140 T400,100 T600,60 T800,20" fill="none" stroke="#1a365d" stroke-width="3"></path>
+<circle cx="0" cy="180" fill="#1a365d" r="4"></circle>
+<circle cx="200" cy="140" fill="#1a365d" r="4"></circle>
+<circle cx="400" cy="100" fill="#1a365d" r="4"></circle>
+<circle cx="600" cy="60" fill="#1a365d" r="4"></circle>
+<circle cx="800" cy="20" fill="#1a365d" r="4"></circle>
+</svg>
+<div class="absolute bottom-[-32px] left-0 right-0 flex justify-between px-4 text-label-sm font-label-sm text-on-surface-variant">
+<span>May</span>
+<span>Jun</span>
+<span>Jul</span>
+<span>Aug</span>
+<span>Sep</span>
+<span>Oct</span>
+</div>
+</div>
+<div class="pt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant">
+<p class="font-label-sm text-label-sm text-on-surface-variant">EBRW High</p>
+<p class="font-headline-md text-headline-md text-primary">790</p>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Math High</p>
+<p class="font-headline-md text-headline-md text-primary">800</p>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Total Accuracy</p>
+<p class="font-headline-md text-headline-md text-primary">92%</p>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Global Rank</p>
+<p class="font-headline-md text-headline-md text-primary">Top 1%</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="max-w-container-max mx-auto px-margin-desktop py-stack-lg border-t border-outline-variant mt-stack-lg text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2023 Academic Excellence System. All rights reserved. SAT® is a registered trademark of the College Board.</p>
+</footer>
+<script>
+        // Simple micro-interaction for active nav links
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                navLinks.forEach(l => {
+                    l.classList.remove('text-primary', 'dark:text-primary-fixed', 'border-b-2', 'border-primary', 'dark:border-primary-fixed', 'pb-1');
+                    l.classList.add('text-on-surface-variant', 'dark:text-on-surface-variant');
+                });
+                link.classList.add('text-primary', 'dark:text-primary-fixed', 'border-b-2', 'border-primary', 'dark:border-primary-fixed', 'pb-1');
+                link.classList.remove('text-on-surface-variant', 'dark:text-on-surface-variant');
+            });
+        });
+    </script>
+</body></html>

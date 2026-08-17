@@ -1,0 +1,16 @@
+.vercel
+.gstack/
+.env
+.env.*
+local.db
+local.db-*
+*.db
+*.db-journal
+node_modules
+
+# PDFs de preguntas (contenido del College Board): no se publican
+*.pdf
+
+# Herramientas locales
+.claude/
+.kombai/
