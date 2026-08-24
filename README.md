@@ -11,7 +11,7 @@ Sin cuentas, sin login, sin nube: los datos no salen de tu computadora.
 
 | | Dónde se guarda tu progreso |
 |---|---|
-| **Versión web** (desplegada en Vercel) | En **tu navegador** (IndexedDB). El servidor no tiene base de datos: nada de lo que haces sale de tu equipo. Se borra si limpias los datos del navegador. |
+| **Versión web**: <https://satpracticeopen.vercel.app> | En **tu navegador** (IndexedDB). El servidor no tiene base de datos: nada de lo que haces sale de tu equipo. Se borra si limpias los datos del navegador. |
 | **Instalada en tu PC** (abajo) | En un archivo **SQLite** (`local.db`) dentro de la carpeta del proyecto. |
 
 ## Instalar y usar
