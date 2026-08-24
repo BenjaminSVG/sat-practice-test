@@ -7,6 +7,13 @@ y guarda tu progreso en **una base de datos en tu propio equipo**.
 
 Sin cuentas, sin login, sin nube: los datos no salen de tu computadora.
 
+## Dos formas de usarlo (en las dos, tus datos son tuyos)
+
+| | Dónde se guarda tu progreso |
+|---|---|
+| **Versión web** (desplegada en Vercel) | En **tu navegador** (IndexedDB). El servidor no tiene base de datos: nada de lo que haces sale de tu equipo. Se borra si limpias los datos del navegador. |
+| **Instalada en tu PC** (abajo) | En un archivo **SQLite** (`local.db`) dentro de la carpeta del proyecto. |
+
 ## Instalar y usar
 
 Requiere [Node.js](https://nodejs.org) 18 o superior.
@@ -55,6 +62,7 @@ js/portal.js          Dashboard, historial, repaso de errores
 js/app.js             Motor del examen: cronómetro, navegación, corrección
 js/pdf-parser.js      Lectura del PDF del College Board (PDF.js)
 js/scoring.js         Conversión de aciertos a escala 200–800
+js/api-local.js       Guardado en el navegador (IndexedDB) cuando no hay base
 api/                  Endpoints HTTP (intentos, estadísticas, repaso)
 api/_lib/db.js        Cliente SQLite (libSQL) + esquema
 scripts/start-local.mjs  Servidor local (127.0.0.1)
